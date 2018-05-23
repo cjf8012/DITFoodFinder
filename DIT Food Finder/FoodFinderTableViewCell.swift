@@ -10,10 +10,15 @@ import UIKit
 
 class FoodFinderTableViewCell: UITableViewCell {
 
-    @IBOutlet weak var cellImage: UIImageView!
+    @IBOutlet weak var cellImage: UIImageView!{
+        didSet {
+            cellImage.layer.cornerRadius = 30.0
+            cellImage.clipsToBounds = true
+        }
+    }
     @IBOutlet weak var cellName: UILabel!
     @IBOutlet weak var cellAddress: UILabel!
-    @IBOutlet weak var cellType: UIView!
+    @IBOutlet weak var cellType: UILabel!
     
     override func awakeFromNib() {
         super.awakeFromNib()
